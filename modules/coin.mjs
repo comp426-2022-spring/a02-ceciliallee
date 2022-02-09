@@ -79,7 +79,10 @@ function countFlips(array) {
       tailsCount++;
     }
   }
-  return "tails: " + tailsCount + ", heads: " + headsCount;
+  return {
+    tails: tailsCount,
+    heads: headsCount
+  }
 }
 
 /** Flip a coin!
@@ -96,9 +99,17 @@ function countFlips(array) {
 function flipACoin(call) {
   let result = coinFlip();
   if (result == call) {
-    return "call: " + call + ", flip: " + result + ", result: 'win'";
+    return {
+      call: call, 
+      flip: result,
+      result: "win"
+    } 
   } else {
-    return "call: " + call + ", flip: " + result + ", result: 'lose'";
+    return {
+      call: call,
+      flip: result,
+      result: "lose",
+    };
   }
 }
 
